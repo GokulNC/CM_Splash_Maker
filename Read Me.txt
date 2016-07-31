@@ -1,0 +1,37 @@
+CM-SPLASH Maker
+
+CUSTOM SPLASH SCREEN CREATOR for:
+ Wileyfox Swift,
+ Wileyfox Storm,
+ Zuk Z1,
+ YU Yutopia, Yuphoria & Yunique..
+
+How To Use:
+
+For Wileyfox Storm instructions, go to this link:
+http://forum.xda-developers.com/wileyfox-storm/general/guide-how-to-create-custom-splash-t3429715
+
+For Wileyfox Swift instructions, go to this link:
+http://forum.xda-developers.com/wileyfox-swift/general/guide-how-to-create-custom-splash-t3427143
+
+For Lenovo Zuk Z1 instructions, go to this link:
+http://forum.xda-developers.com/zuk-z1/general/guide-how-to-create-custom-splash-t3429718
+
+For Yu instructions, go to this link:
+http://forums.yuplaygod.com/threads/guide-how-to-create-splash-screen-boot-logo-for-yutopia.40725/
+
+Credits:
+Created for Wileyfox, Zuk & Yu devices By @GokulNC
+Inspired from RLimager Created By makers_mark @ XDA (Link: http://forum.xda-developers.com/showthread.php?t=2764354# )
+
+
+Advanced Information:
+
+Settings applied:
+Pixel Format: bgr24 variant (with offset byte after color bytes)
+RLE I/O Format: 3 bytes per pixel
+Max Run Length: 255 pixels
+Offset: 512 (First 512bytes for Header)
+
+Source Code:
+Check the /bin folder

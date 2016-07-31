@@ -1,0 +1,1 @@
+bin\ffmpeg.exe -hide_banner -loglevel quiet -f rawvideo -vcodec rawvideo -pix_fmt bgr24 -s 1440x2560 -i 1.img -vframes 1 -y 1.png
