@@ -48,7 +48,7 @@ su
 dd if=/dev/block/bootdevice/by-name/splash of=/sdcard/stock_splash.img
 ```
 
-To backup your stock splash.img to your via ADB:
+To backup your stock splash.img to your computer via ADB:
 ```sh
 adb shell su -c dd if=/dev/block/bootdevice/by-name/splash of=/sdcard/stock_splash.img
 adb pull /sdcard/stock_splash.img stock_splash.img
