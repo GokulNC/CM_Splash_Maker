@@ -78,7 +78,9 @@ enum devices_patch_id {
 	yutopia=3,
 	wileyfox_swift=4,
 	wileyfox_storm=5,
-	zuk_z1=6
+	zuk_z1=6,
+    bq_aquaris_x5_plus=7,
+    obi_worldphone_mv1=8
 };
 enum devices_patch_id device=general;
 
@@ -137,8 +139,8 @@ void writeHeader(int pic_no) {
 	
 	if(SystemIsBigEndian()) {
 		for(i=1; i<pic_no; ++i) {
-			if(i==4 && device==yunique) { //Patch for Yunique
-				for(j=1;j<=32;j++) write(1, &zero, 1); //32bytes of zeros inbetween before download mode for Yunique, no fucking idea why...
+			if(i==4 && (device==yunique || device==obi_worldphone_mv1)) { //Patch for Yunique & Obi Worldphone MV1
+				for(j=1;j<=32;j++) write(1, &zero, 1); //32bytes of zeros inbetween before download mode, no fucking idea why...
 				position += 32;
 			}
 			lil_end = convertToLittleEndian(width);
@@ -157,8 +159,8 @@ void writeHeader(int pic_no) {
 		}
 	} else {
 		for(i=1; i<pic_no; ++i) {
-			if(i==4 && device==yunique) { //Patch for Yunique
-				for(j=1;j<=32;j++) write(1, &zero, 1); //32bytes of zeros inbetween before download mode for Yunique, no fucking idea why...
+			if(i==4 && (device==yunique || device==obi_worldphone_mv1)) { //Patch for Yunique & Obi Worldphone MV1
+				for(j=1;j<=32;j++) write(1, &zero, 1); //32bytes of zeros inbetween before download mode, no fucking idea why...
 				position += 32;
 			}
 			write(1, &width, 4);
@@ -320,10 +322,12 @@ int set_device_settings() {
 	switch(device) {
 		case wileyfox_swift:
 		case yuphoria:
+        case obi_worldphone_mv1:
 		case yunique:		width=720; height_per_pic=1280; break;
 		case yutopia:		width=1440; height_per_pic=2560; break;
 		case wileyfox_storm:
-		case zuk_z1:		width=1080; height_per_pic=1920; break;
+		case zuk_z1:
+        case bq_aquaris_x5_plus: width=1080; height_per_pic=1920; break;
 		case general:
 		default : break;
 	}

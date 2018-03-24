@@ -13,6 +13,8 @@ set id3=Yutopia
 set id4=Wileyfox_Swift
 set id5=Wileyfox_Storm
 set id6=Zuk_Z1
+set id7=BQ_Aquaris_X5_Plus
+set id8=Obi_Worldphone_MV1
 
 del /Q temp\* >NUL 2>NUL
 set bpp=3
@@ -41,15 +43,19 @@ echo.3. Yu Yutopia
 echo.4. Wileyfox Swift
 echo.5. Wileyfox Storm
 echo.6. Zuk Z1
+echo.7. BQ Aquaris X5 Plus
+echo.8. Obi Worldphone MV1
 echo.9. Exit
 echo.
-choice /n /m "Select A Menu Number:" /C:1234569
+choice /n /m "Select A Menu Number:" /C:123456789
 if errorlevel 1 set id=1
 if errorlevel 2 set id=2
 if errorlevel 3 set id=3
 if errorlevel 4 set id=4
 if errorlevel 5 set id=5
 if errorlevel 6 set id=6
+if errorlevel 7 set id=7
+if errorlevel 8 set id=8
 if errorlevel 9 set id=9
 if %id%==9 exit
 set tmp=id%id%
@@ -65,6 +71,8 @@ if %id%==3 call :YUTOPIA
 if %id%==4 call :WILEYFOX_SWIFT
 if %id%==5 call :WILEYFOX_STORM
 if %id%==6 call :ZUK_Z1
+if %id%==7 call :BQ_AQUARIS_X5_PLUS
+if %id%==8 call :OBI_WORLDPHONE_MV1
 call :RLEtoRAW
 call :RAWtoPNG
 echo.Extraction Complete. Picture can be found in output/extracted_logo folder
@@ -95,7 +103,7 @@ set width=720
 set height_pp=1280
 goto :eof
 
-:WILEYFOX_STORM:
+:WILEYFOX_STORM
 set width=1080
 set height_pp=1920
 goto :eof
@@ -105,6 +113,15 @@ set width=1080
 set height_pp=1920
 goto :eof
 
+:BQ_AQUARIS_X5_PLUS
+set width=1080
+set height_pp=1920
+goto :eof
+
+:OBI_WORLDPHONE_MV1
+set width=720
+set height_pp=1280
+goto :eof
 
 :RLEtoRAW
 echo.
