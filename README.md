@@ -14,9 +14,12 @@ This can no longer be used for any new devices I think, since [Cyanogen is shut 
 
 ### How to run
 
+Download this tool from here: https://github.com/GokulNC/CM_Splash_Maker/archive/master.zip <br/>
+Extract it and open the folder.
+
 #### Creating a splash.img :
 
-Just drag and drop your bootlogo file on the `CREATE_Logo.bat` file, and then select your device as prompted.<br/>
+Just drag and drop your bootlogo picture on the `CREATE_Logo.bat` file, and then select your device as prompted.<br/>
 After the bootlogo is created, it will automatically be in `output` folder.<br/>
 You can also generate a flashable ZIP file now which can be flashed from custom recovery.
 
